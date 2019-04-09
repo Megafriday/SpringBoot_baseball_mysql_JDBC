@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<title>更新</title>
+	<link th:href="@{/webjars/bootstrap/3.3.7-1/css/bootstrap.min.css}"
+		rel="stylesheet"></link>
+	<script th:src="@{/webjars/jquery/1.11.1/jquery.min.js}"></script>
+	<script th:src="@{/webjars/bootstrap/3.3.7-1/js/bootstrap.min.js}"></script>
+</head>
+<body>
+	<div class="container">
+		<h1>Edit Player</h1>
+
+		<form th:action="@{'/players/' + *{id}}" th:method="put" th:object="${player}">
+			<div class="form-group" th:classappend="${#fields.hasErrors('name')}?has-error">
+				<label class="control-label">名前</label>
+				<input class="form-control" type="text" th:field="*{name}">
+				<span class="text-danger" th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></span>
+			</div>
+
+			<div class="form-group" th:classappend="${#fields.hasErrors('age')}?has-error">
+				<label class="control-label">年齢</label>
+				<input class="form-control" type="text" th:field="*{age}">
+				<span class="text-danger" th:if="${#fields.hasErrors('age')}" th:errors="*{age}"></span>
+	        </div>
+
+			<div class="form-group">
+				<label class="control-label">チーム</label>
+				<input class="form-control" type="text" th:field="*{team}">
+			</div>
+
+			<div class="form-group">
+				<label class="control-label">ポジション</label>
+				<input class="form-control" type="text" th:field="*{position}">
+			</div>
+
+			<input class="btn btn-default btn-xs" type="submit" value="更新">
+		</form>
+
+		<div class="pull-right">
+			<a class="btn btn-link" th:href="@{/players}">一覧画面へ</a>
+		</div>
+	</div>
+</body>
+</html>
