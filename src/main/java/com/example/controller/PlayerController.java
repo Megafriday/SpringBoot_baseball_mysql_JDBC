@@ -82,4 +82,17 @@ public class PlayerController {
 		playerService.update(player);
 		return "redirect:/players";
 	}
+
+	@GetMapping("/login")
+	public String getLogin(Model model) {
+		model.addAttribute("iserror", false);
+		return "login";
+	}
+
+	@GetMapping("/login-error")
+	public String getLoginError(Model model) {
+		model.addAttribute("iserror", true);
+		return "login";
+	}
+
 }

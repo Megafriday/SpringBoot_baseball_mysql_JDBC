@@ -1,7 +1,21 @@
 /* Playerテーブル */
+delete from player;
 insert into player values(1, "星飛雄馬", 20, "読売巨人", "ピッチャー");
 insert into player values(2, "花形満", 22, "阪神タイガース", "ファースト");
 insert into player values(3, "左門豊作", 23, "大洋ホエールズ", "レフト");
+
+
+/* userテーブル */
+delete from user;
+insert into user(username, password, authorities) values("jack", "$2a$10$xRTXvpMWly0oGiu65WZlm.3YL95LGVV2ASFjDhe6WF4.Qji1huIPa", "ROLE_ADMIN");
+insert into user(username, password, authorities) values("tom", "$2a$10$xRTXvpMWly0oGiu65WZlm.3YL95LGVV2ASFjDhe6WF4.Qji1huIPa", "ROLE_USER");
+
+
+
+
+
+
+
 
 
 

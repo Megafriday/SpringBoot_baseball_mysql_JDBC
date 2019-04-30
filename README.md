@@ -4,3 +4,4 @@
 
 # DB
 MySQL
+(JdbcTemplate + BeanPropertyRowMapper)

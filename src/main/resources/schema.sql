@@ -6,6 +6,16 @@ CREATE TABLE IF NOT EXISTS baseball.player (
 	position VARCHAR(50)
 );
 
+CREATE TABLE IF NOT EXISTS baseball.user (
+    username VARCHAR(50) PRIMARY KEY,
+    password VARCHAR(100) not null,
+    authorities VARCHAR(100) not null,
+    account_non_locked BOOLEAN DEFAULT true,
+    account_non_expired BOOLEAN DEFAULT true,
+    credentioals_non_expird BOOLEAN DEFAULT true,
+    enabled BOOLEAN DEFAULT true
+);
+
 
 /* 従業員テーブル（第３章で作成） */
 /*

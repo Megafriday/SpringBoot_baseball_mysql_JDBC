@@ -1,19 +1,20 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-	<meta charset="UTF-8">
+<meta charset="UTF-8">
 	<title>全プレイヤー</title>
-	<link th:href="@{/webjars/bootstrap/3.3.7-1/css/bootstrap.min.css}"
-		rel="stylesheet"></link>
+	<link th:href="@{/webjars/bootstrap/3.3.7-1/css/bootstrap.min.css}"	rel="stylesheet"></link>
 	<script th:src="@{/webjars/jquery/1.11.1/jquery.min.js}"></script>
 	<script th:src="@{/webjars/bootstrap/3.3.7-1/js/bootstrap.min.js}"></script>
-
 </head>
 <body>
 	<div class="container">
 
-		<h1>Listing Players</h1>
+		<form th:action="@{/logout}" th:method="post" class="pull-right">
+			<button class="btn btn-default btn-xs" type="submit">ログアウト</button>
+		</form>
 
+		<h1>Listing Players</h1>
 
 		<table class="table">
 			<thead>
@@ -35,8 +36,10 @@
 					<td th:text="*{age}"></td>
 					<td th:text="*{team}"></td>
 					<td th:text="*{position}"></td>
-					<td><a class="btn btn-default btn-xs" th:href="@{'/players/' + *{id}}">参照</a></td>
-					<td><a class="btn btn-default btn-xs" th:href="@{'/players/' + *{id}} + '/edit'">編集</a></td>
+					<td><a class="btn btn-default btn-xs"
+						th:href="@{'/players/' + *{id}}">参照</a></td>
+					<td><a class="btn btn-default btn-xs"
+						th:href="@{'/players/' + *{id}} + '/edit'">編集</a></td>
 					<td>
 						<form th:action="@{'/players/' + *{id}}" th:method="delete">
 							<input type="submit" class="btn btn-default btn-xs" value="削除">
@@ -46,7 +49,7 @@
 			</tbody>
 		</table>
 
-		<h3 th:if="${#arrays.isEmpty(players)}">arraysデータがありません</h3>
+		<h3 th:if="${#arrays.isEmpty(players)}">データがありません</h3>
 		<a class="btn btn-default btn-xs" th:href="@{/players/new}">新規登録</a>
 
 	</div>
