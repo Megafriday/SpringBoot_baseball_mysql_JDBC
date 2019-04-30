@@ -1,4 +1,5 @@
 # 概要
+baseballのMySQLバージョン
 
 # URL
 
