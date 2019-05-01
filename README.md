@@ -1,5 +1,5 @@
 # 概要
-baseballのMySQLバージョン
+baseballのMySQLバージョン、Spring Securityも実装済み
 
 # URL
 
