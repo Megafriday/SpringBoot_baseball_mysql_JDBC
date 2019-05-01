@@ -5,4 +5,4 @@ baseballのMySQLバージョン
 
 # DB
 MySQL
-(JdbcTemplate + BeanPropertyRowMapper)
+(JdbcTemplate.query() + BeanPropertyRowMapper)
